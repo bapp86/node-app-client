@@ -1,0 +1,16 @@
+name: CD Release (Tag)
+
+on:
+  push:
+    tags:
+      - 'v*' # Ejemplo: v1.0.0
+
+jobs:
+  release-image:
+    uses: ciclocloud/central-templates/.github/workflows/reusable-pipeline.yml@main
+    with:
+      should_push: true # Requisito I1: Este sí publica
+      image_tag: ${{ github.ref_name }} # Usa el nombre del tag como versión
+    secrets:
+      DOCKER_HUB_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
+      DOCKER_HUB_TOKEN: ${{ secrets.DOCKER_HUB_TOKEN }}

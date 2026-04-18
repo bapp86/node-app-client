@@ -1,0 +1,15 @@
+name: CI Validation (Push)
+
+on:
+  push:
+    branches:
+      - 'feature/*' # Solo ramas de trabajo
+    tags-ignore:
+      - '**' # Requisito: que no se dispare por tags
+
+jobs:
+  validate-code:
+    # Llamamos a la lógica centralizada en tu organización ciclocloud
+    uses: ciclocloud/central-templates/.github/workflows/reusable-pipeline.yml@main
+    with:
+      should_push: false # Requisito I1: Construir sin publicar
