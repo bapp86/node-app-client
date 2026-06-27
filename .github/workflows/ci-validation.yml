@@ -10,6 +10,6 @@ on:
 jobs:
   validate-code:
     # Llamamos a la lógica centralizada en tu organización ciclocloud
-    uses: ciclocloud/central-templates/.github/workflows/reusable-pipeline.yml@main
+    uses: bapp86/central-templates/.github/workflows/reusable-pipeline.yml@main
     with:
       should_push: false # Requisito I1: Construir sin publicar
