@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: demo-api
-        image: bapp86/node-app-painemilla:latest
+        image: bapp86/node-app-painemilla:version-inexistente
         ports:
         - containerPort: 3000
         readinessProbe:
