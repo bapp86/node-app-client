@@ -7,7 +7,7 @@ on:
 
 jobs:
   release-image:
-    uses: ciclocloud/central-templates/.github/workflows/reusable-pipeline.yml@main
+    uses: bapp86/central-templates/.github/workflows/reusable-pipeline.yml@main
     with:
       should_push: true # Requisito I1: Este sí publica
       image_tag: ${{ github.ref_name }} # Usa el nombre del tag como versión
